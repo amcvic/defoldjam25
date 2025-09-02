@@ -1,0 +1,77 @@
+animations {
+  id: "idleright"
+  images {
+    image: "/assets/images/player/alienPink_front.png"
+  }
+  images {
+    image: "/assets/images/player/alienPink_stand.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 5
+}
+animations {
+  id: "left"
+  images {
+    image: "/assets/images/player/alienPink_walk1.png"
+  }
+  images {
+    image: "/assets/images/player/alienPink_walk2.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+  flip_horizontal: 1
+}
+animations {
+  id: "right"
+  images {
+    image: "/assets/images/player/alienPink_walk1.png"
+  }
+  images {
+    image: "/assets/images/player/alienPink_walk2.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "duck"
+  images {
+    image: "/assets/images/player/alienPink_duck.png"
+  }
+  images {
+    image: "/assets/images/player/alienPink_duck.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "jump"
+  images {
+    image: "/assets/images/player/alienPink_jump.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "dash"
+  images {
+    image: "/assets/images/player/alienPink_swim1.png"
+  }
+  images {
+    image: "/assets/images/player/alienPink_swim2.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "idleleft"
+  images {
+    image: "/assets/images/player/alienPink_front.png"
+  }
+  images {
+    image: "/assets/images/player/alienPink_stand.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 5
+  flip_horizontal: 1
+}
+extrude_borders: 2
