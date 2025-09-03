@@ -3,7 +3,7 @@ instances {
   id: "player"
   prototype: "/main/player/player.go"
   position {
-    x: 145.0
+    x: 974.0
     y: 131.0
   }
 }
@@ -27,6 +27,12 @@ embedded_instances {
   "  position {\n"
   "    z: -0.5\n"
   "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"customer_factory\"\n"
+  "  type: \"factory\"\n"
+  "  data: \"prototype: \\\"/main/customer/customer.go\\\"\\n"
+  "\"\n"
   "}\n"
   ""
   position {
