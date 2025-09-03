@@ -17,7 +17,7 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"restaurant\"\n"
   "  type: \"sprite\"\n"
-  "  data: \"default_animation: \\\"restaurant\\\"\\n"
+  "  data: \"default_animation: \\\"restaurant-interior-2\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "textures {\\n"
   "  sampler: \\\"texture_sampler\\\"\\n"
