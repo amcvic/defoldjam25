@@ -1,0 +1,60 @@
+images {
+  image: "/assets/images/food/burger.png"
+}
+images {
+  image: "/assets/images/food/curry.png"
+}
+images {
+  image: "/assets/images/food/fries.png"
+}
+images {
+  image: "/assets/images/food/hotdog.png"
+}
+images {
+  image: "/assets/images/food/icecream.png"
+}
+images {
+  image: "/assets/images/food/meat.png"
+}
+images {
+  image: "/assets/images/food/noodles.png"
+}
+images {
+  image: "/assets/images/food/onigiri.png"
+}
+images {
+  image: "/assets/images/food/pizza.png"
+}
+images {
+  image: "/assets/images/food/spaghetti.png"
+}
+images {
+  image: "/assets/images/food/sushi.png"
+}
+images {
+  image: "/assets/images/food/taco.png"
+}
+images {
+  image: "/assets/images/speechbubble.png"
+}
+images {
+  image: "/druid/images/empty.png"
+}
+animations {
+  id: "thinking"
+  images {
+    image: "/druid/images/empty.png"
+  }
+  images {
+    image: "/assets/images/dots_1.png"
+  }
+  images {
+    image: "/assets/images/dots_2.png"
+  }
+  images {
+    image: "/assets/images/dots_3.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 2
+}
+extrude_borders: 2

@@ -1,35 +1,80 @@
+local function generate_order(self)
+	msg.post("#thinking_dots", "disable")
+	msg.post("#progress_bar", "enable")
+	msg.post("#progress_bar", "start_waiting")
+	
+	local item_qty = math.random(1,3)
+	self.order = {}
 
-function init(self)	
-	self.dir = vmath.vector3()
-	sprite.set_constant("#sprite", "tint", vmath.vector4(0, 1, 0, 1))
-	self.current_anim = nil
-	msg.post("#progress_bar", "set_position", {position = go.get_position(".")})
+	for i = 1, item_qty do
+		table.insert(self.order,self.menu[math.random(1, #self.menu)])
+	end
+
+	self.food1 = factory.create("#food_factory", nil, nil, nil, .2)
+	self.food2 = factory.create("#food_factory", nil, nil, nil, .2)
+	self.food3 = factory.create("#food_factory", nil, nil, nil, .2)
+
+	go.set_parent(self.food1, "#customer")
+	go.set_position(vmath.vector3(0,120,1),self.food1)
+	sprite.play_flipbook(self.food1, self.order[1])
+
+	if #self.order > 1 then
+		go.set_parent(self.food2, "#customer")
+		go.set_position(vmath.vector3(-80,120,1),self.food2)
+		sprite.play_flipbook(self.food2, self.order[2])
+	end
+	
+	if #self.order > 2 then
+		go.set_parent(self.food3, "#customer")
+		go.set_position(vmath.vector3(80,120,1),self.food3)
+		sprite.play_flipbook(self.food3, self.order[3])
+	end
 end
 
-local function remove()
+local function remove(self)
 	msg.post("/restaurant#main", "add_enemy")
+	if self.food1 then
+		go.delete(self.food1)
+	end
+	if self.food2 then
+		go.delete(self.food2)
+	end
+	if self.food3 then
+		go.delete(self.food3)
+	end
 	go.delete(".")
 end
 
 local function leave(self)
 	sprite.set_constant("#sprite", "tint", vmath.vector4(1, 0, 0, 1))
-	go.animate(".", "position.x", go.PLAYBACK_ONCE_FORWARD, -2, go.EASING_LINEAR, 2, 0, remove)
+	go.animate(".", "position.x", go.PLAYBACK_ONCE_FORWARD, -200, go.EASING_LINEAR, 2, 0, function() remove(self) end)
 end
 
-function update(self, dt)
+function init(self)	
+	math.randomseed(os.time())
+	sprite.set_constant("#sprite", "tint", vmath.vector4(0, 1, 0, 1))
+	msg.post("#progress_bar", "set_position", {position = go.get_position(".") + vmath.vector3(0,220,1)})
+	msg.post("#progress_bar", "disable")
+	self.thinking = false
+	self.menu = {
+		"burger",
+		"taco",
+		"curry",
+		"sushi",
+		"hotdog",
+		"pizza",
+		"meat",
+		"onigiri",
+		"noodles",
+		"spaghetti",
+		"fries",
+		"icecream"
+	}
+	timer.delay(math.random(2,7), false, function() generate_order(self) end)
 end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("leave") then
 		leave(self)
 	end
-end
-
-function on_input(self, action_id, action)
-end
-
-function on_reload(self)
-	-- Add reload-handling code here
-	-- Learn more: https://defold.com/manuals/hot-reload/
-	-- Remove this function if not needed
 end
