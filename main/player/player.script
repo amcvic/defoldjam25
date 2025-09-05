@@ -37,7 +37,11 @@ local function dash(self)
 	end
 end
 
-local function jump()
+local function jump(self)
+	self.velocity.y = JUMP
+	self.on_ground = false
+	
+	sound.play("#jump")
 end
 
 local function attack(self)
@@ -105,9 +109,7 @@ function on_input(self, action_id, action)
 	end
 
 	if action_id == hash("jump") and action.pressed and self.on_ground then
-		self.velocity.y = JUMP
-		self.on_ground = false
-		sound.play("#jump")
+		jump(self)
 	elseif action_id == hash("left") then
 		self.direction = DIRECTION_LEFT
 		move(self)
