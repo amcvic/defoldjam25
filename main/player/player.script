@@ -1,7 +1,7 @@
 local DIRECTION_LEFT = -1
 local DIRECTION_RIGHT = 1
 local SPEED = 150
-local GRAVITY = 1000
+local GRAVITY = 1500
 local JUMP = 600
 local DASH_MULTIPLIER = 1
 local DASH_DURATION = .15 -- seconds
@@ -51,7 +51,6 @@ local function jump(self)
 end
 
 local function attack(self)
-	pprint('test')
 	local now = socket.gettime()
 	
 	if now > (self.last_attack + ATTACK_COOLDOWN) then
@@ -111,7 +110,6 @@ function fixed_update(self, dt)
 	else
 		self.velocity.y = self.velocity.y - GRAVITY * dt
 	end
-	pprint(self.velocity.y)
 	
 	self.velocity.y = clamp(self.velocity.y, -2000, 2000)
 end
