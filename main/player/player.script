@@ -3,6 +3,8 @@ local DIRECTION_RIGHT = 1
 local SPEED = 150
 local GRAVITY = 1000
 local JUMP = 600
+local DASH_MULTIPLIER = 1
+local DASH_DURATION = .15 -- seconds
 local DASH_COOLDOWN = 0.8 -- seconds
 local ATTACK_COOLDOWN = 0.55 -- seconds
 
@@ -12,6 +14,7 @@ function init(self)
 	self.velocity = vmath.vector3(0, 0, 0)
 	self.current_anim = nil 
 	self.on_ground = false
+	self.dashing = false
 	self.last_dash = 0
 	self.last_attack = 0
 end
@@ -21,18 +24,21 @@ local function flip(direction)
 end
 
 local function move(self)
-	self.velocity.x = SPEED * self.direction
+	self.velocity.x = SPEED * DASH_MULTIPLIER * self.direction
+
 end
 
 local function dash(self)
 	local now = socket.gettime()
-	local position = go.get_position()
 	
 	if now > (self.last_dash + DASH_COOLDOWN) then
 		sound.play("#attack2")
-		position.x = position.x + self.direction * 200
+
+		DASH_MULTIPLIER = 15
+		DASH_DURATION = .15
 		
-		go.set_position(position)
+		self.dashing = true
+		self.velocity.x = SPEED * DASH_MULTIPLIER * self.direction
 		self.last_dash = now
 	end
 end
@@ -86,7 +92,16 @@ function update(self, dt)
 	go.set_position(p + self.velocity * dt)
 	animate(self)
 
-	self.velocity.x = 0 
+	if self.dashing then
+		DASH_DURATION = DASH_DURATION - dt
+
+		if DASH_DURATION <= 0 then
+			self.dashing = false
+			DASH_MULTIPLIER = 1
+		end
+	else
+		self.velocity.x = 0 
+	end
 end
 
 function fixed_update(self, dt)
@@ -133,6 +148,7 @@ function on_message(self, message_id, message, sender)
 	if (message_id == hash("contact_point_response") and message.other_group == hash("floor")) then
 		self.on_ground = true
 		self.velocity.y = 0
+		-- msg.post("player#duckcollision", "disable")
 	end
 end
 
