@@ -76,8 +76,8 @@ end
 
 function fixed_update(self, dt)
 	-- gravity
-	if (self.on_ground == true) then
-		-- self.dir.y = 1000
+	if (self.on_ground) then
+		self.velocity.y = 0
 	else 
 		self.velocity.y = self.velocity.y - GRAVITY * dt
 	end
