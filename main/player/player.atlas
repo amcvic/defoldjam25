@@ -1,5 +1,5 @@
 animations {
-  id: "idleright"
+  id: "idle"
   images {
     image: "/assets/images/player/alienPink_front.png"
   }
@@ -10,19 +10,7 @@ animations {
   fps: 5
 }
 animations {
-  id: "left"
-  images {
-    image: "/assets/images/player/alienPink_walk1.png"
-  }
-  images {
-    image: "/assets/images/player/alienPink_walk2.png"
-  }
-  playback: PLAYBACK_LOOP_FORWARD
-  fps: 10
-  flip_horizontal: 1
-}
-animations {
-  id: "right"
+  id: "walk"
   images {
     image: "/assets/images/player/alienPink_walk1.png"
   }
@@ -61,17 +49,5 @@ animations {
   }
   playback: PLAYBACK_LOOP_FORWARD
   fps: 10
-}
-animations {
-  id: "idleleft"
-  images {
-    image: "/assets/images/player/alienPink_front.png"
-  }
-  images {
-    image: "/assets/images/player/alienPink_stand.png"
-  }
-  playback: PLAYBACK_LOOP_FORWARD
-  fps: 5
-  flip_horizontal: 1
 }
 extrude_borders: 2

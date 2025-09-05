@@ -22,6 +22,14 @@ key_trigger {
   input: KEY_LSHIFT
   action: "dash"
 }
+key_trigger {
+  input: KEY_A
+  action: "attack"
+}
+key_trigger {
+  input: KEY_S
+  action: "interact"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_1
   action: "touch"

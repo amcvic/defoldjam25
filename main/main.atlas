@@ -10,4 +10,7 @@ images {
 images {
   image: "/assets/images/restaurant.png"
 }
+images {
+  image: "/assets/images/restaurant-interior-2.png"
+}
 extrude_borders: 2
