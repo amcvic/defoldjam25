@@ -41,3 +41,27 @@ embedded_components {
   "}\n"
   ""
 }
+embedded_components {
+  id: "jump"
+  type: "sound"
+  data: "sound: \"/assets/sounds/jump.ogg\"\n"
+  ""
+}
+embedded_components {
+  id: "attack"
+  type: "sound"
+  data: "sound: \"/assets/sounds/slash.ogg\"\n"
+  ""
+}
+embedded_components {
+  id: "attack2"
+  type: "sound"
+  data: "sound: \"/assets/sounds/attack.ogg\"\n"
+  ""
+}
+embedded_components {
+  id: "hit"
+  type: "sound"
+  data: "sound: \"/assets/sounds/hit.ogg\"\n"
+  ""
+}
