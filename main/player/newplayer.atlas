@@ -1,0 +1,79 @@
+images {
+  image: "/assets/images/hero/Attack1.png"
+}
+images {
+  image: "/assets/images/hero/Attack2.png"
+}
+images {
+  image: "/assets/images/hero/Death.png"
+}
+images {
+  image: "/assets/images/hero/FallAttack.png"
+}
+images {
+  image: "/assets/images/hero/Hurt.png"
+}
+images {
+  image: "/assets/images/hero/Jump.png"
+}
+images {
+  image: "/assets/images/hero/JumpAttack.png"
+}
+images {
+  image: "/assets/images/hero/Run.png"
+}
+images {
+  image: "/assets/images/hero/RunAttack1.png"
+}
+images {
+  image: "/assets/images/hero/RunAttack2.png"
+}
+images {
+  image: "/assets/images/hero/Squat.png"
+}
+images {
+  image: "/assets/images/hero/SquatAttack.png"
+}
+images {
+  image: "/assets/images/hero/Walk.png"
+}
+images {
+  image: "/assets/images/hero/WalkAttack1.png"
+}
+images {
+  image: "/assets/images/hero/WalkAttack2.png"
+}
+animations {
+  id: "idle"
+  images {
+    image: "/assets/images/hero/Idle.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 5
+}
+animations {
+  id: "walk"
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "duck"
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "jump"
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "attack"
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "dash"
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+extrude_borders: 2
