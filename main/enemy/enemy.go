@@ -1,6 +1,6 @@
 components {
   id: "player"
-  component: "/main/player/player.script"
+  component: "/main/enemy/enemy.script"
 }
 embedded_components {
   id: "sprite"
@@ -12,6 +12,11 @@ embedded_components {
   "  texture: \"/main/player/player.atlas\"\n"
   "}\n"
   ""
+  scale {
+    x: 0.5
+    y: 0.5
+    z: 0.5
+  }
 }
 embedded_components {
   id: "collisionobject"
@@ -20,24 +25,23 @@ embedded_components {
   "mass: 0.0\n"
   "friction: 0.1\n"
   "restitution: 0.5\n"
-  "group: \"player\"\n"
-  "mask: \"floor\"\n"
-  "mask: \"enemy\"\n"
+  "group: \"enemy\"\n"
+  "mask: \"player\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_BOX\n"
   "    position {\n"
   "      x: -1.0\n"
-  "      y: -53.0\n"
+  "      y: -26.0\n"
   "    }\n"
   "    rotation {\n"
   "    }\n"
   "    index: 0\n"
   "    count: 3\n"
-  "    id: \"player\"\n"
+  "    id: \"enemy\"\n"
   "  }\n"
-  "  data: 52.312\n"
-  "  data: 75.98643\n"
+  "  data: 26.09134\n"
+  "  data: 38.13117\n"
   "  data: 52.312\n"
   "}\n"
   ""
@@ -46,18 +50,6 @@ embedded_components {
   id: "jump"
   type: "sound"
   data: "sound: \"/assets/sounds/jump.ogg\"\n"
-  ""
-}
-embedded_components {
-  id: "attack"
-  type: "sound"
-  data: "sound: \"/assets/sounds/slash.ogg\"\n"
-  ""
-}
-embedded_components {
-  id: "attack2"
-  type: "sound"
-  data: "sound: \"/assets/sounds/attack.ogg\"\n"
   ""
 }
 embedded_components {

@@ -1,0 +1,28 @@
+local MOVE_TYPES = {"HORIZONTAL", "VERTICAL"}
+local SCREEN_WIDTH = 1280
+local SCREEN_HEIGHT = 720
+local MIN_HORIZONTAL_HEIGHT = 16
+local MAX_HORIZONTAL_HEIGHT = 240
+local MIN_SPEED = 4
+local MAX_SPEED = 8
+
+local function on_complete()
+	factory.create("/restaurant#enemy")
+	go.delete(".", true)
+end
+
+function init(self)
+	math.randomseed(os.time())
+	go.set("#sprite", "tint", vmath.vector4(0,0,1,1))
+	
+	local speed = math.random(MIN_SPEED, MAX_SPEED)
+	self.movement_type = MOVE_TYPES[math.random(1,#MOVE_TYPES)]
+	
+	if self.movement_type == "HORIZONTAL" then
+		go.set_position(vmath.vector3(0, math.random(MIN_HORIZONTAL_HEIGHT, MAX_HORIZONTAL_HEIGHT), 0))
+		go.animate(".", "position.x", go.PLAYBACK_ONCE_FORWARD, SCREEN_WIDTH, go.EASING_LINEAR, speed, 0, on_complete)
+	elseif self.movement_type == "VERTICAL" then
+		go.set_position(vmath.vector3(math.random(0, SCREEN_WIDTH), SCREEN_HEIGHT, 0))
+		go.animate(".", "position.y", go.PLAYBACK_ONCE_FORWARD, 0, go.EASING_LINEAR, speed, 0, on_complete)
+	end
+end

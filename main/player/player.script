@@ -148,6 +148,9 @@ function on_message(self, message_id, message, sender)
 		self.velocity.y = 0
 		-- msg.post("player#duckcollision", "disable")
 	end
+	if (message_id == hash("contact_point_response") and message.other_group == hash("enemy")) then
+		print("collided with enemy")
+	end
 end
 
 function on_reload(self)
