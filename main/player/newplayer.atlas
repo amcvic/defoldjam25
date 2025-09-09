@@ -52,7 +52,6 @@ animations {
   images {
     image: "/assets/images/hero/Sliced/duck/tile003.png"
   }
-  fps: 10
 }
 animations {
   id: "jump"
@@ -156,5 +155,27 @@ animations {
   }
   playback: PLAYBACK_LOOP_FORWARD
   fps: 5
+}
+animations {
+  id: "duck_attack"
+  images {
+    image: "/assets/images/hero/Sliced/duck_attack/tile000.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/duck_attack/tile001.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/duck_attack/tile002.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/duck_attack/tile003.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/duck_attack/tile004.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/duck_attack/tile005.png"
+  }
+  fps: 10
 }
 extrude_borders: 2
