@@ -56,6 +56,7 @@ local function attack(self)
 	if now > (self.last_attack + ATTACK_COOLDOWN) then
 		sound.play("#attack")
 
+		self.attacking = true
 		self.last_attack = now
 	end
 end
@@ -73,6 +74,12 @@ local function animate(self)
 		anim = hash("duck")
 	end
 
+	if self.attacking and self.duck and self.on_ground then
+		anim = hash("duck_attack")
+	elseif self.attacking then
+		anim = hash("attack")
+	end
+
 	if anim ~= self.current_anim then
 		sprite.play_flipbook("#sprite", anim)
 		self.current_anim = anim
@@ -87,6 +94,11 @@ end
 
 function update(self, dt)
 	local p = go.get_position()
+	local now = socket.gettime()
+	
+	if now > (self.last_attack + ATTACK_COOLDOWN) then
+		self.attacking = false
+	end
 
 	go.set_position(p + self.velocity * dt)
 	animate(self)
@@ -104,9 +116,13 @@ function update(self, dt)
 end
 
 function fixed_update(self, dt)
+	local p = go.get_position()
+	
 	-- gravity
 	if self.on_ground then
 		self.velocity.y = 0
+		p.y = 54
+		go.set_position(p)
 	else
 		self.velocity.y = self.velocity.y - GRAVITY * dt
 	end
@@ -145,7 +161,6 @@ end
 function on_message(self, message_id, message, sender)
 	if (message_id == hash("contact_point_response") and message.other_group == hash("floor")) then
 		self.on_ground = true
-		self.velocity.y = 0
 		-- msg.post("player#duckcollision", "disable")
 	end
 end
