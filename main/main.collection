@@ -3,8 +3,8 @@ instances {
   id: "player"
   prototype: "/main/player/player.go"
   position {
-    x: 145.0
-    y: 131.0
+    x: 137.0
+    y: 56.0
   }
 }
 scale_along_z: 0

@@ -1,73 +1,108 @@
-images {
-  image: "/assets/images/hero/Attack1.png"
-}
-images {
-  image: "/assets/images/hero/Attack2.png"
-}
-images {
-  image: "/assets/images/hero/Death.png"
-}
-images {
-  image: "/assets/images/hero/FallAttack.png"
-}
-images {
-  image: "/assets/images/hero/Hurt.png"
-}
-images {
-  image: "/assets/images/hero/Jump.png"
-}
-images {
-  image: "/assets/images/hero/JumpAttack.png"
-}
-images {
-  image: "/assets/images/hero/Run.png"
-}
-images {
-  image: "/assets/images/hero/RunAttack1.png"
-}
-images {
-  image: "/assets/images/hero/RunAttack2.png"
-}
-images {
-  image: "/assets/images/hero/Squat.png"
-}
-images {
-  image: "/assets/images/hero/SquatAttack.png"
-}
-images {
-  image: "/assets/images/hero/Walk.png"
-}
-images {
-  image: "/assets/images/hero/WalkAttack1.png"
-}
-images {
-  image: "/assets/images/hero/WalkAttack2.png"
-}
 animations {
   id: "idle"
   images {
-    image: "/assets/images/hero/Idle.png"
+    image: "/assets/images/hero/Sliced/idle/tile000.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/idle/tile001.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/idle/tile002.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/idle/tile003.png"
   }
   playback: PLAYBACK_LOOP_FORWARD
   fps: 5
 }
 animations {
   id: "walk"
+  images {
+    image: "/assets/images/hero/Sliced/walk/tile000.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/walk/tile001.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/walk/tile002.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/walk/tile003.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/walk/tile004.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/walk/tile005.png"
+  }
   playback: PLAYBACK_LOOP_FORWARD
   fps: 10
 }
 animations {
   id: "duck"
-  playback: PLAYBACK_LOOP_FORWARD
+  images {
+    image: "/assets/images/hero/Sliced/duck/tile000.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/duck/tile001.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/duck/tile002.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/duck/tile003.png"
+  }
   fps: 10
 }
 animations {
   id: "jump"
+  images {
+    image: "/assets/images/hero/Sliced/jump/tile000.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/jump/tile001.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/jump/tile002.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/jump/tile003.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/jump/tile004.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/jump/tile005.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/jump/tile006.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/jump/tile007.png"
+  }
   playback: PLAYBACK_LOOP_FORWARD
   fps: 10
 }
 animations {
   id: "attack"
+  images {
+    image: "/assets/images/hero/Sliced/attack2/tile000.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/attack2/tile001.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/attack2/tile002.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/attack2/tile003.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/attack2/tile004.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/attack2/tile005.png"
+  }
   playback: PLAYBACK_LOOP_FORWARD
   fps: 10
 }
@@ -75,5 +110,51 @@ animations {
   id: "dash"
   playback: PLAYBACK_LOOP_FORWARD
   fps: 10
+}
+animations {
+  id: "hit"
+  images {
+    image: "/assets/images/hero/Sliced/hit/tile000.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/hit/tile001.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/hit/tile002.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/hit/tile003.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 3
+}
+animations {
+  id: "death"
+  images {
+    image: "/assets/images/hero/Sliced/death/tile000.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/death/tile001.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/death/tile002.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/death/tile003.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/death/tile004.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/death/tile005.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/death/tile006.png"
+  }
+  images {
+    image: "/assets/images/hero/Sliced/death/tile007.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 5
 }
 extrude_borders: 2
